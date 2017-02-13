@@ -27,12 +27,12 @@ import static org.junit.Assert.*;
 @ContextConfiguration({"classpath:spring/spring-dao.xml"})
 public class SeckillDaoTest {
     //注入Dao实现类依赖
-    @Resource
+    @Autowired
     private SeckillDao seckillDao;
 
     @Test
     public void testQueryById() throws Exception {
-        long id = 1000;
+        long id = 1005;
         Seckill seckill = seckillDao.queryById(id);
         System.out.println(seckill.getName());
         System.out.println(seckill);

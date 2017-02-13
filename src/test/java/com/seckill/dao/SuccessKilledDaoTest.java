@@ -1,5 +1,6 @@
 package com.seckill.dao;
 
+import com.seckill.entity.SuccessKilled;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -26,7 +27,7 @@ public class SuccessKilledDaoTest {
 
     @Test
     public void testInsertSuccessKilled() throws Exception {
-        long seckillId = 1000L;
+        long seckillId = 1001L;
         long userPhone = 1882141550L;
         int insertCount = successKilledDao.insertSuccessKilled(seckillId,userPhone);
         System.out.println("insertCount="+insertCount);
@@ -34,6 +35,10 @@ public class SuccessKilledDaoTest {
 
     @Test
     public void testQueryByIdWithSeckill() throws Exception {
-
+        long seckillId = 1001L;
+        long userPhone = 1882141550L;
+        SuccessKilled successKilled = successKilledDao.queryByIdWithSeckill(seckillId,userPhone);
+        System.out.println("successKilled="+successKilled);
+        System.out.println("successKilled.getSeckill()="+successKilled.getSeckill());
     }
 }
