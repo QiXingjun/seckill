@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.2.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <!--配置SpringMVC-->
+    <!--1.开启SpringMVC注解模式-->
+    <!--这样配置简化了配置，具体表现如下：
+        （1）自动注册DefaultAnnotationHandlerMapping，AnnotationMethodHandlerAdapter
+        （2）提供了一系列功能，如：数据绑定，数字和日期的format（@NumberFormat，@DateFormat），
+             对xml、json提供默认的读写支持
+    -->
+    <mvc:annotation-driven/>
+
+    <!--2.因为servlet-mapping的映射路径是："/"，所以需要做一下静态资源的配置-->
+    <!--好处有两个：
+        （1）加入对静态资源（js，png等）的处理
+        （2）允许使用"/"做整体映射
+    -->
+    <mvc:default-servlet-handler/>
+
+    <!--3.配置Jsp，显示ViewResolver-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <!--4.扫描web相关的bean-->
+    <context:component-scan base-package="com.seckill.web"/>
+</beans>

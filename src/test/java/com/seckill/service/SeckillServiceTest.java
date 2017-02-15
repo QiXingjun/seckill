@@ -80,7 +80,7 @@ public class SeckillServiceTest {
      */
     @Test
     public void testSeckillLogic() throws Exception {
-        long seckillId = 1002;
+        long seckillId = 1025;
         long userPhone = 18862141551L;
         Exposer exposer = seckillService.exportSeckillUrl(seckillId);
         if (exposer.isExposed()) {
