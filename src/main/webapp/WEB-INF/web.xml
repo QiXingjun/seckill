@@ -10,7 +10,7 @@
     <servlet>
         <servlet-name>seckill-dispatchServlet</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-        <!--配置SpringMVC需要加载的配置文件spring-dao.xml，spring-sevice.xml,spring-web.xml-->
+        <!--配置SpringMVC需要加载的配置文件spring-dao.xml，spring-service.xml,spring-web.xml-->
         <init-param>
             <!--作用：告诉SpringMVC，有哪些配置文件-->
             <param-name>contextConfigLocation</param-name>

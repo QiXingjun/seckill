@@ -21,6 +21,11 @@
         SELECT seckill_id,name,number,start_time,end_time,create_time
         from seckill
         WHERE seckill_id = #{seckillId}
+        <!-- #{}和${}的区别 -->
+        <!-- 最简单的区别就是${}解析穿过来的参数值不带单引号，#{}解析传过来参数带单引号 -->
+--      使用#{}语法,MyBatis会产生PreparedStatement语句中，并且安全的设置PreparedStatement参数，这个过程中MyBatis会进行必要的安全检查和转义
+--      ${}方式会引发SQL注入的问题、同时也会影响SQL语句的预编译，所以从安全性和性能的角度出发，能使用#{}的情况下就不要使用${}
+--      但是${}在什么情况下使用呢？比如，动态SQL中的字段名，如：ORDER BY ${columnName}
     </select>
 
     <select id="queryAll" resultType="Seckill">
