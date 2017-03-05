@@ -225,7 +225,6 @@
     </dependency>
 
     <!--protostuff的依赖-->
-    <!-- https://mvnrepository.com/artifact/com.dyuproject.protostuff/protostuff-core -->
     <dependency>
       <groupId>com.dyuproject.protostuff</groupId>
       <artifactId>protostuff-core</artifactId>
