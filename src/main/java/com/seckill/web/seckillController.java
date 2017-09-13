@@ -108,6 +108,7 @@ public class seckillController {
     @ResponseBody
     public SeckillResult<Long> time(){
         Date now = new Date();
+        logger.info("hahaha");
         return new SeckillResult<Long>(true,now.getTime());
     }
 

@@ -67,6 +67,8 @@
     <compiler.version>3.1</compiler.version>
     <!--tomcat7版本-->
     <tomcat7.version>2.2</tomcat7.version>
+    <!-- lombok版本 -->
+    <lombok.version>1.16.6</lombok.version>
   </properties>
 
   <build>
@@ -241,6 +243,12 @@
       <groupId>commons-collections</groupId>
       <artifactId>commons-collections</artifactId>
       <version>${collections.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>${lombok.version}</version>
     </dependency>
   </dependencies>
 </project>
